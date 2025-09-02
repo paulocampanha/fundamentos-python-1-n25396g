@@ -1,4 +1,4 @@
-# Nesse programa vamos estudar os operadores aritmético
+# Nesse programa vamos estudar os operadores aritméticos
 # do python
 
 num1 = 30
