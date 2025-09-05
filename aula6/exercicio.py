@@ -19,9 +19,27 @@
 nome_produto = input("Digite o nome do produto: ")
 preco_produto = float(input('Digite o preço do produto: '))
 numero_parcelas = int(input('Digite o número de parcelas: '))
+while numero_parcelas > 10:
+    print('Número inválido de parcelas. Digite de 1 a 10 parcelas.')
+    numero_parcelas = int(input('Digite o número de parcelas: '))
+
+dia_pgto = int(input('Escolha o dia para pagamento 5, 10, 15 ou 25: '))
+mes_pgto = 10
+ano_pgto = 2025
+
 contador = 1
 valor_parcela = preco_produto / numero_parcelas
 
+print('=' * 30)
+print(f'Produto: {nome_produto}')
+print(f'Valor: R$ {preco_produto:.2f}')
+print(f'Nº e Parcelas: {numero_parcelas}')
 while contador <= numero_parcelas:
-    print(f'Parcela {contador}: R$ {valor_parcela:.2f}')
+    print(f'Parcela {contador:2d}: {dia_pgto:2d}/{mes_pgto:02d}/{ano_pgto} R$ {valor_parcela:.2f}')
     contador += 1
+    mes_pgto += 1
+    if mes_pgto > 12:
+        mes_pgto = 1
+        ano_pgto += 1
+print('=' * 30)
+print('--- Casas Perambulando S/A ---')
